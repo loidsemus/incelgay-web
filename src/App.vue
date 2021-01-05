@@ -10,8 +10,8 @@ import Hero from "./components/Hero";
 export default {
   name: "App",
   components: {
-    Hero,
-  },
+    Hero
+  }
 };
 </script>
 
@@ -33,5 +33,11 @@ html {
   flex-direction: column;
   justify-content: center;
   padding: 0 128px;
+}
+
+@media screen and (max-width: 900px) {
+  #app {
+    padding: 0 32px;
+  }
 }
 </style>

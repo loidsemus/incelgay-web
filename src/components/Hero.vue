@@ -1,21 +1,27 @@
 <template>
   <div class="hero">
     <h1>incel gejming klubb</h1>
-    <p v-if="errored" class="info error">Kunde inte ladda serverstatus</p>
+    <p v-if="errored" class="info error">
+      <span class="dot error"></span> Kunde inte ladda serverstatus
+    </p>
     <div v-else>
-      <p v-if="loading" class="info">
-        <span class="dot loading"></span> mc.incel.gay &mdash; Laddar...
-      </p>
-      <div v-else>
-        <p class="info" v-if="info.online">
-          <span class="dot online"></span> mc.incel.gay &mdash;
+      <p class="info">
+        <span
+          class="dot"
+          v-bind:class="{
+            loading: loading,
+            online: info.online,
+            offline: !info.online
+          }"
+        ></span>
+        mc.incel.gay &mdash;
+        <span v-if="info.loading">Laddar...</span>
+        <span v-else-if="info.online">
           {{ info.players.online }}/{{ info.players.max }} spelar just nu
           <span style="color: #808080">(MC {{ info.version }})</span>
-        </p>
-        <p class="info" v-else>
-          <span class="dot offline"></span> mc.incel.gay &mdash; Offline
-        </p>
-      </div>
+        </span>
+        <span v-else>Offline</span>
+      </p>
     </div>
   </div>
 </template>
@@ -29,7 +35,7 @@ export default {
     return {
       loading: true,
       info: null,
-      errored: false,
+      errored: false
     };
   },
   mounted() {
@@ -41,7 +47,7 @@ export default {
         this.errored = true;
       })
       .finally(() => (this.loading = false));
-  },
+  }
 };
 </script>
 
@@ -86,7 +92,23 @@ h1 {
   background-color: #5cff7a;
 }
 
-.dot.offline {
+.dot.offline,
+.dot.error {
   background-color: #ff5757;
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  .info {
+    font-size: 1.25em;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
 }
 </style>
