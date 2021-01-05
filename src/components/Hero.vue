@@ -9,7 +9,7 @@
       <div v-else>
         <p class="info" v-if="info.online">
           <span class="dot online"></span> mc.incel.gay &mdash;
-          {{ info.players.online }}/{{ info.players.max }} spelare online
+          {{ info.players.online }}/{{ info.players.max }} spelar just nu
           <span style="color: #808080">(MC {{ info.version }})</span>
         </p>
         <p class="info" v-else>
