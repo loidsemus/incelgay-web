@@ -5,20 +5,21 @@
       <span class="dot error"></span> Kunde inte ladda serverstatus
     </p>
     <div v-else>
-      <p class="info">
+      <p class="info" v-if="loading">
+        <span class="dot loading"></span> mc.incel.gay &mdash; Laddar...
+      </p>
+      <p class="info" v-else>
         <span
           class="dot"
           v-bind:class="{
-            loading: loading,
             online: info.online,
             offline: !info.online
           }"
         ></span>
         mc.incel.gay &mdash;
-        <span v-if="info.loading">Laddar...</span>
-        <span v-else-if="info.online">
+        <span v-if="info.online">
           {{ info.players.online }}/{{ info.players.max }} spelar just nu
-          <span style="color: #808080">(MC {{ info.version }})</span>
+          <span style="color: #808080">({{ info.version }})</span>
         </span>
         <span v-else>Offline</span>
       </p>
