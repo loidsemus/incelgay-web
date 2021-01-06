@@ -18,6 +18,8 @@ export default {
 <style>
 :root {
   font-family: "Rubik", sans-serif;
+  background-color: #202225;
+  color: #f2ffff;
 }
 
 body,
