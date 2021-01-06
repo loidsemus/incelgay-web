@@ -5,24 +5,26 @@
       <span class="dot error"></span> Kunde inte ladda serverstatus
     </p>
     <div v-else>
-      <p class="info" v-if="loading">
-        <span class="dot loading"></span> mc.incel.gay &mdash; Laddar...
-      </p>
-      <p class="info" v-else>
-        <span
-          class="dot"
-          v-bind:class="{
-            online: info.online,
-            offline: !info.online
-          }"
-        ></span>
-        mc.incel.gay &mdash;
-        <span v-if="info.online">
-          {{ info.players.online }}/{{ info.players.max }} spelar just nu
-          <span style="color: #808080">({{ info.version }})</span>
-        </span>
-        <span v-else>Offline</span>
-      </p>
+      <transition name="fade" mode="out-in">
+        <p class="info" v-if="loading" key="loading">
+          <span class="dot loading"></span> mc.incel.gay &mdash; Laddar...
+        </p>
+        <p class="info" v-else key="loaded">
+          <span
+            class="dot"
+            v-bind:class="{
+              online: info.online,
+              offline: !info.online
+            }"
+          ></span>
+          mc.incel.gay &mdash;
+          <span v-if="info.online">
+            {{ info.players.online }}/{{ info.players.max }} spelar just nu
+            <span style="color: #808080">({{ info.version }})</span>
+          </span>
+          <span v-else>Offline</span>
+        </p>
+      </transition>
     </div>
   </div>
 </template>
@@ -96,6 +98,14 @@ h1 {
 .dot.offline,
 .dot.error {
   background-color: #ff5757;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
 }
 
 @media screen and (max-width: 900px) {
