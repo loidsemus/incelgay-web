@@ -28,15 +28,5 @@ export default {
 body,
 html {
   height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.text-blurple {
-  color: #7289da;
-}
-
-.blurple {
-  background-color: #7289da;
 }
 </style>
