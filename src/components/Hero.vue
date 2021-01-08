@@ -2,31 +2,29 @@
   <div class="hero">
     <h1>incel gejming klubb</h1>
     <transition name="fade" mode="out-in">
-      <p v-if="errored" class="info error">
-        <span class="dot error"></span> Kunde inte ladda serverstatus
+      <p class="info" v-if="loading" key="loading">
+        <span class="dot loading"></span> mc.incel.gay &mdash; Laddar...
       </p>
-      <div v-else>
-        <transition name="fade" mode="out-in">
-          <p class="info" v-if="loading" key="loading">
-            <span class="dot loading"></span> mc.incel.gay &mdash; Laddar...
-          </p>
-          <p class="info" v-else key="loaded">
-            <span
-              class="dot"
-              v-bind:class="{
-                online: info.online,
-                offline: !info.online
-              }"
-            ></span>
-            mc.incel.gay &mdash;
-            <span v-if="info.online">
-              {{ info.players.online }}/{{ info.players.max }} spelar just nu
-              <span style="color: #808080">({{ info.version }})</span>
-            </span>
-            <span v-else>Offline</span>
-          </p>
-        </transition>
-      </div>
+      <template v-else>
+        <p v-if="errored" class="info error">
+          <span class="dot error"></span> Kunde inte ladda serverstatus
+        </p>
+        <p class="info" v-else>
+          <span
+            class="dot"
+            v-bind:class="{
+              online: info.online,
+              offline: !info.online
+            }"
+          ></span>
+          mc.incel.gay &mdash;
+          <span v-if="info.online">
+            {{ info.players.online }}/{{ info.players.max }} spelar just nu
+            <span style="color: #808080">({{ info.version }})</span>
+          </span>
+          <span v-else>Offline</span>
+        </p>
+      </template>
     </transition>
   </div>
 </template>
