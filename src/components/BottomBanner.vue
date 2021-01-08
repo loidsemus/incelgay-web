@@ -22,7 +22,7 @@
       ></path>
     </svg>
     <img
-      src="@/assets/roblox.png"
+      src="@/assets/images/roblox.png"
       class="hidden 2xl:block absolute right-24 bottom-48 w-64"
     />
   </div>
