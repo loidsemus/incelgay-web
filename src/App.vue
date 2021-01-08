@@ -1,19 +1,19 @@
 <template>
   <div id="app" class="h-full flex flex-col justify-center">
     <Hero />
-    <BotBanner />
+    <BottomBanner />
   </div>
 </template>
 
 <script>
 import Hero from "./components/Hero";
-import BotBanner from "./components/BotBanner";
+import BottomBanner from "./components/BottomBanner";
 
 export default {
   name: "App",
   components: {
     Hero,
-    BotBanner
+    BottomBanner
   }
 };
 </script>
