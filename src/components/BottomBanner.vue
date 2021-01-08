@@ -1,6 +1,6 @@
 <template>
   <div
-    class="px-2 flex absolute blurple bottom-0 right-0 w-full py-4 md:px-8 xl:px-72 2xl:px-96 text-xl justify-between items-center"
+    class="px-2 flex absolute blurple gradient bottom-0 right-0 w-full py-4 md:px-8 xl:px-72 2xl:px-96 text-xl justify-between items-center"
   >
     <p class="inline">incel gejming klubb: kuk-o-boll-unionen på Discord</p>
     <a
@@ -25,5 +25,13 @@ export default {
 
 .blurple {
   background-color: #7289da;
+}
+
+.blurple.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(95, 119, 203, 1) 0%,
+    rgba(114, 137, 218, 1) 100%
+  );
 }
 </style>
