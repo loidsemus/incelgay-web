@@ -1,6 +1,6 @@
 <template>
-  <div class="hero">
-    <h1>incel gejming klubb</h1>
+  <div class="mx-auto flex flex-col justify-center h-full">
+    <h1 class="text-7xl mb-4 font-bold">incel gejming klubb</h1>
     <transition name="fade" mode="out-in">
       <p class="info" v-if="loading" key="loading">
         <span class="dot loading"></span> mc.incel.gay &mdash; Laddar...
@@ -20,7 +20,7 @@
           mc.incel.gay &mdash;
           <span v-if="info.online">
             {{ info.players.online }}/{{ info.players.max }} spelar just nu
-            <span style="color: #808080">({{ info.version }})</span>
+            <span class="text-gray-500">({{ info.version }})</span>
           </span>
           <span v-else>Offline</span>
         </p>
@@ -55,49 +55,29 @@ export default {
 </script>
 
 <style>
-.hero {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-
-h1 {
-  font-size: 4em;
-  margin: 0 0 10px 0;
-  font-weight: 700;
-}
-
 .info {
-  margin: 0;
-  font-size: 1.5em;
-  font-weight: 300;
+  @apply text-2xl font-light;
 }
 
 .dot {
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
+  @apply animate-pulse h-4 w-4 inline-block rounded-full mr-1 relative;
 }
 
 .info.error {
-  color: #ff5757;
+  @apply text-red-400;
 }
 
 .dot.loading {
-  background-color: #477bff;
+  @apply bg-blue-400;
 }
 
 .dot.online {
-  background-color: #5cff7a;
+  @apply bg-green-400;
 }
 
 .dot.offline,
 .dot.error {
-  background-color: #ff5757;
+  @apply bg-red-400;
 }
 
 .fade-enter-active,
@@ -106,20 +86,5 @@ h1 {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
-}
-
-@media screen and (max-width: 900px) {
-  h1 {
-    font-size: 3em;
-  }
-
-  .info {
-    font-size: 1.25em;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-  }
 }
 </style>

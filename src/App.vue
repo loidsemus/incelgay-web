@@ -1,23 +1,26 @@
 <template>
-  <div id="app">
+  <div id="app" class="h-full flex flex-col justify-center">
     <Hero />
+    <BotBanner />
   </div>
 </template>
 
 <script>
 import Hero from "./components/Hero";
+import BotBanner from "./components/BotBanner";
 
 export default {
   name: "App",
   components: {
-    Hero
+    Hero,
+    BotBanner
   }
 };
 </script>
 
 <style>
 :root {
-  font-family: "Rubik", sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #202225;
   color: #f2ffff;
 }
@@ -29,17 +32,11 @@ html {
   padding: 0;
 }
 
-#app {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 128px;
+.text-blurple {
+  color: #7289da;
 }
 
-@media screen and (max-width: 900px) {
-  #app {
-    padding: 0 32px;
-  }
+.blurple {
+  background-color: #7289da;
 }
 </style>
