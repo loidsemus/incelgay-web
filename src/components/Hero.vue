@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto flex flex-col justify-center h-full">
+  <div class="mx-auto flex flex-col justify-center h-full relative pb-48">
     <h1 class="text-7xl mb-4 font-bold">incel gejming klubb</h1>
     <transition name="fade" mode="out-in">
       <p class="info" v-if="loading" key="loading">

@@ -1,6 +1,7 @@
 <template>
   <div
-    class="px-2 flex absolute blurple gradient bottom-0 right-0 w-full py-4 md:px-8 xl:px-72 2xl:px-96 xl:justify-around text-xl justify-between items-center"
+    class="banner px-2 flex absolute blurple bottom-0 right-0 w-full
+     py-4 md:px-8 xl:px-72 2xl:px-96 xl:justify-around text-xl justify-between items-center"
   >
     <p class="inline">incel gejming klubb: kuk-o-boll-unionen på Discord</p>
     <a
@@ -9,11 +10,17 @@
     >
       gå med
     </a>
-    <img
-      src="@/assets/images/discord.png"
-      class="hidden 2xl:block absolute left-16 bottom-1/3 rounded-2xl w-32 
-      transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg"
-    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="wave absolute bottom-3/4 md:bottom-1/2 left-0"
+    >
+      <path
+        fill="#7289DA "
+        fill-opacity="1"
+        d="M0,64L30,85.3C60,107,120,149,180,176C240,203,300,213,360,218.7C420,224,480,224,540,213.3C600,203,660,181,720,186.7C780,192,840,224,900,208C960,192,1020,128,1080,106.7C1140,85,1200,107,1260,106.7C1320,107,1380,85,1410,74.7L1440,64L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+      ></path>
+    </svg>
   </div>
 </template>
 
@@ -24,6 +31,10 @@ export default {
 </script>
 
 <style scoped>
+.wave {
+  z-index: -1;
+}
+
 .text-blurple {
   color: #7289da;
 }
