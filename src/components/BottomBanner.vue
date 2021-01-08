@@ -9,6 +9,10 @@
     >
       gå med
     </a>
+    <img
+      src="@/assets/images/discord.png"
+      class="hidden 2xl:block absolute left-16 bottom-1/3 rounded-lg w-32 hover:rounded-lg"
+    />
   </div>
 </template>
 
